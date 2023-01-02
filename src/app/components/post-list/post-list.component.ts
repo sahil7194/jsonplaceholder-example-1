@@ -11,26 +11,32 @@ export class PostListComponent {
 
   posts :PostModel[]= [];
   postPerPage :number = 3;
-  postStrating : number = 0;
+  startPost : number = 0;
+  endPost :number = 1 * this.postPerPage;
+  postPagesCount :number = 0;
 
   constructor (private postService: PostService){
     
   }
 
   ngOnInit(){
-    this.fetchAllposts();
-    console.log(this.LastPage , 'last ');
-
+    this.fetchAllposts(this.startPost,this.endPost);
   }
 
-  fetchAllposts(){
+  fetchAllposts(start:number,end:number){
 
   this.postService.getAllPosts().subscribe((response)=>{
-    this.posts = response.slice(0,9);
+
+   this.posts = response.slice(start,end);
+
   });
   }
 
-  get LastPage(){
-    return this.posts.length
+  updatePostPerPage($event:any) {
+
+    this.postPerPage = $event.target.value;
+    // console.log(this.postPerPage);
+    this.fetchAllposts(this.startPost,this.postPerPage);
   }
+
 }

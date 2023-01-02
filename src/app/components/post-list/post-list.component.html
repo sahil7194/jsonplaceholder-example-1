@@ -1,4 +1,15 @@
 <div class="container p-2">
+    <div class="row m-2">
+        <div class="col-3">
+            <select class="form-control" (change)="updatePostPerPage($event)">
+                <option selected disabled> Post Count</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+       
+    </div>
+    
     <div *ngFor="let post of posts; let i =index;">
         <a routerLink="/post/{{i+1}}" class="text-decoration-none">
         <div class="card mb-3 text-body text-center">
@@ -22,6 +33,5 @@
         </div>
         </a>
     </div>
-
 
 </div> 
