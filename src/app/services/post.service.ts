@@ -20,18 +20,18 @@ export class PostService {
  
   constructor(private httpClient:HttpClient) { }
 
-  getAll(): Observable<PostModel[]> 
+  getAllPosts(): Observable<PostModel[]> 
   { 
     return this.httpClient.get<PostModel[]>(this.url+'posts');
   }
 
-  getPostById(id: number): Observable<PostModel>
+  getPostById(id: any): Observable<PostModel>
   {
     return this.httpClient.get<PostModel>(this.url+'posts/'+id);
   }
 
-  getCommentByPostId(id: number): Observable<CommentModel>{
-    return this.httpClient.get<CommentModel>(this.url+'posts/'+id+'comments');
+  getCommentByPostId(id: any): Observable<CommentModel[]>{
+    return this.httpClient.get<CommentModel[]>(this.url+'posts/'+id+'/comments');
   }
 
   addNewPost(post:PostModel):Observable<PostModel>

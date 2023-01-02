@@ -1,1 +1,36 @@
-<p>post works!</p>
+<div class="container mt-2 p-2" *ngIf="post">
+    <div class="card" >
+        <div class="card-header">
+            <h1 class="text-bold text-center">
+                {{post.title}}
+            </h1>
+        </div>
+        <div class="card-body text-justify">
+            <p class="text-center bg-light p-3">
+                <img src="https://picsum.photos/950/550" alt="" class="rounded mx-auto d-bloc img-fluid">
+            </p>
+            <p class="text-wrap p-3">
+                {{post.body}}
+            </p>
+            <span class="float-end">
+                {{post.userId}}
+            </span>
+        </div>
+    </div>
+
+    post comment
+
+    <div *ngIf="comments">
+        <!-- {{comments | json}} -->
+
+        <div class="card mb-2" *ngFor="let comment of comments">
+            <div class="card-header">
+                {{ comment.name}}
+            </div>
+            <div class="card-body">
+                {{ comment.body}}
+            </div>
+           
+        </div>
+    </div>
+</div>

@@ -7,12 +7,14 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { PostComponent } from './components/post/post.component';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { HttpClientModule  } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
     PostListComponent,
     PostComponent,
     CreatePostComponent,
+    HomeComponent,
     
   ],
   imports: [

@@ -1,0 +1,28 @@
+<div class="container pt-4">
+    <div class="card">
+        <div class="card-header fs-1">
+            Top Post
+        </div>
+        <div class="card-body">
+          <div class="row m-2">
+
+                <div class="col-3" *ngFor="let post of topPost;let i = index">
+                    <a routerLink="post/{{i+1}}" class="text-decoration-none text-dark">
+                    <div class="card">
+                        <div class="card-header bg-info" style="max-height: 120px; min-height: 100px;">
+                            {{ post.title }}
+                        </div>
+                        <div class="card-body">
+                            <img src="https://picsum.photos/2{{i}}0/2{{i}}0" alt="" class="m-2">
+                            <p class="text-warp">
+                               {{post.body}}
+                            </p>
+                        </div>
+                    </div> 
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

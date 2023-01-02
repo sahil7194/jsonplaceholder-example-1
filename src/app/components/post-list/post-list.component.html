@@ -1,1 +1,27 @@
-<p>post-list works!</p>
+<div class="container p-2">
+    <div *ngFor="let post of posts; let i =index;">
+        <a routerLink="/post/{{i+1}}" class="text-decoration-none">
+        <div class="card mb-3 text-body text-center">
+            <div class="card-header">
+                <span class="fs-2 p-2">
+                    {{ post.title }}
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <img src="https://picsum.photos/2{{i}}0/2{{i}}0" alt="">
+                    <p class="text-break p-1 m-3">
+                        {{ post.body}}
+                    </p>
+                </div>    
+                <hr>            
+                <span class="float-end fs-6 me-3">
+                    <a routerLink="/post/{{i+1}}" class="text-decoration-none">Read more</a>
+                </span>
+            </div>
+        </div>
+        </a>
+    </div>
+
+
+</div> 

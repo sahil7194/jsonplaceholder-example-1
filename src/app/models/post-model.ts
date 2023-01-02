@@ -1,5 +1,5 @@
 export class PostModel {
-    userID!: string;
+    userId!: string;
     id!:number;
     title!: string;
     body!: string;
